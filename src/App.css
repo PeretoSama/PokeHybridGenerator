@@ -1,0 +1,4 @@
+$mycolor :#fff;
+div{
+    background-color: $mycolor;
+}
