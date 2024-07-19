@@ -1,0 +1,104 @@
+@define-mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    margin-top: 5px;
+    background: var(--backgroundImg);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 8px;
+    height: auto;
+    color: #fff;
+    
+}
+
+.navTitle {
+    width: 100%;
+    padding: 5px;
+    @mixin center;
+
+}
+
+.gridSearchBar {
+    width: 100%;
+    padding: 5px;
+    @mixin center;
+
+    input {
+        width: 50%;
+        /* i dont want to dinamically change the border radius with js */
+        border-radius: 5000px;
+    }
+
+}
+
+.filtersSelection {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.toggle1 {
+    width: 100%;
+    @mixin center;
+}
+
+.toggle2 {
+    width: 100%;
+    @mixin center;
+}
+
+.dropDown {
+    width: 100%;
+    @mixin center;
+
+}
+
+.pokeTypesToggleWrapper {
+    width: 100%;
+    color: #fff;
+    max-height: 1000px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 5px;
+    transition: max-height .3s ease, padding .3s ease;
+    padding-bottom: 5px;
+    @mixin center;
+
+
+}
+
+.show {
+    
+}
+.regionsToggleWrapper {
+    width: 100%;
+    color: #fff;
+    max-height: 1000px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    transition: max-height .3s ease, padding .3s ease;
+
+    @mixin center;
+
+
+}
+.hide {
+    max-height: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+   
+}
+.dropDown{
+    display: flex;
+    gap: 5px;
+}

@@ -1,4 +1,14 @@
-$mycolor :#fff;
-div{
-    background-color: $mycolor;
+.app{
+   background-color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 80%;
+
+
+   header{
+      width: 80%;
+      
+   }
 }

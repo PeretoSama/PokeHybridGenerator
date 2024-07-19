@@ -1,0 +1,370 @@
+$toggleWidth: 70px;
+$togglIconSize: 20px;
+$borderSize: 4px;
+
+@define-mixin typeColorHover $color {
+    background-color: $color;
+
+    svg {
+        fill: $color;
+    }
+}
+
+@define-mixin typeColorChecked $color {
+    background-color: $color;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 35px;
+        border: 4px inset $color;
+    }
+
+    svg {
+        fill: $color;
+    }
+}
+
+.switchWrapper {
+
+    background-color: var(--colorgreyText);
+    width: 100px;
+    height: 35px;
+    border-radius: 35px;
+    position: relative;
+    transition: background-color ease 0.5s;
+
+
+    label {
+        background-color: #fff;
+        color: var(--colorgreyText);
+        border-radius: 60px;
+        padding: 15px;
+        width: $toggleWidth;
+        height: 85%;
+        ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        transition: all ease 0.5s;
+
+        &:focus {
+            background-color: red;
+        }
+
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+        left: -9000px;
+        opacity: 0;
+
+        &:focus {
+            background-color: red;
+        }
+    }
+
+    input[type="checkbox"].switchToggle:checked+label {
+        left: calc(100% - $toggleWidth - 5px);
+        color: #0069d9;
+    }
+
+    &:has(.switchToggle:checked) {
+        background-color: #0069d9;
+        justify-content: flex-end;
+    }
+}
+
+.toggleIcon {
+    width: auto;
+    height: auto;
+    fill: grey;
+
+
+}
+
+.pokeTypeToggleWrapper {
+    box-sizing: border-box;
+    width: auto;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+    background-color: var(--colorgreyText);
+    border-radius: 100px;
+    padding-left: 3px;
+    padding-right: 5px;
+    
+
+    span {
+        background-color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        position: relative;
+        padding: 4px;
+
+        .toggleIcon {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    label {
+        height: auto;
+        width: auto;
+        position: relative;
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+
+    &:has(.Fire:hover) {
+        @mixin typeColorHover var(--color-fire)
+    }
+
+    &:has(.Water:hover) {
+        @mixin typeColorHover var(--color-water)
+    }
+
+    &:has(.Grass:hover) {
+        @mixin typeColorHover var(--color-grass)
+    }
+
+    &:has(.Electric:hover) {
+        @mixin typeColorHover var(--color-electric)
+    }
+
+    &:has(.Ice:hover) {
+        @mixin typeColorHover var(--color-ice)
+    }
+
+    &:has(.Fighting:hover) {
+        @mixin typeColorHover var(--color-fighting)
+    }
+
+    &:has(.Poison:hover) {
+        @mixin typeColorHover var(--color-poison)
+    }
+
+    &:has(.Ground:hover) {
+        @mixin typeColorHover var(--color-ground)
+    }
+
+    &:has(.Flying:hover) {
+        @mixin typeColorHover var(--color-flying)
+    }
+
+    &:has(.Psychic:hover) {
+        @mixin typeColorHover var(--color-psychic)
+    }
+
+    &:has(.Bug:hover) {
+        @mixin typeColorHover var(--color-bug)
+    }
+
+    &:has(.Bug:checked) {
+        @mixin typeColorChecked var(--color-bug)
+    }
+
+    &:has(.Rock:hover) {
+        @mixin typeColorHover var(--color-rock)
+    }
+
+    &:has(.Ghost:hover) {
+        @mixin typeColorHover var(--color-ghost)
+    }
+
+    &:has(.Dragon:hover) {
+        @mixin typeColorHover var(--color-dragon)
+    }
+
+    &:has(.Dark:hover) {
+        @mixin typeColorHover var(--color-dark)
+    }
+
+    &:has(.Steel:hover) {
+        @mixin typeColorHover var(--color-steel)
+    }
+
+    &:has(.Fairy:hover) {
+        @mixin typeColorHover var(--color-fairy)
+    }
+
+    &:has(.Fire:checked) {
+        @mixin typeColorChecked var(--color-fire);
+
+    }
+
+    &:has(.Fire:checked) {
+        @mixin typeColorChecked var(--color-fire);
+    }
+
+    &:has(.Water:checked) {
+        @mixin typeColorChecked var(--color-water);
+    }
+
+    &:has(.Grass:checked) {
+        @mixin typeColorChecked var(--color-grass);
+    }
+
+    &:has(.Electric:checked) {
+        @mixin typeColorChecked var(--color-electric);
+    }
+
+    &:has(.Ice:checked) {
+        @mixin typeColorChecked var(--color-ice);
+    }
+
+    &:has(.Fighting:checked) {
+        @mixin typeColorChecked var(--color-fighting);
+    }
+
+    &:has(.Poison:checked) {
+        @mixin typeColorChecked var(--color-poison);
+    }
+
+    &:has(.Ground:checked) {
+        @mixin typeColorChecked var(--color-ground);
+    }
+
+    &:has(.Flying:checked) {
+        @mixin typeColorChecked var(--color-flying);
+    }
+
+    &:has(.Psychic:checked) {
+        @mixin typeColorChecked var(--color-psychic);
+    }
+
+    &:has(.Bug:checked) {
+        @mixin typeColorChecked var(--color-bug);
+    }
+
+    &:has(.Rock:checked) {
+        @mixin typeColorChecked var(--color-rock);
+    }
+
+    &:has(.Ghost:checked) {
+        @mixin typeColorChecked var(--color-ghost);
+    }
+
+    &:has(.Dragon:checked) {
+        @mixin typeColorChecked var(--color-dragon);
+    }
+
+    &:has(.Dark:checked) {
+        @mixin typeColorChecked var(--color-dark);
+    }
+
+    &:has(.Steel:checked) {
+        @mixin typeColorChecked var(--color-steel);
+    }
+
+    &:has(.Fairy:checked) {
+        @mixin typeColorChecked var(--color-fairy);
+    }
+
+}
+.regionTypeToggleWrapper{
+    box-sizing: border-box;
+    width: auto;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+    background-color: var(--colorgreyText);
+    border-radius: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    label {
+        height: auto;
+        width: auto;
+        position: relative;
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    &:has(.Kanto:hover) {
+        @mixin typeColorHover #0069d9;
+      }
+      &:has(.Kanto:checked) {
+        @mixin typeColorChecked #0069d9;
+      }
+      
+      &:has(.Johto:hover) {
+        @mixin typeColorHover #0069d9;
+      }
+      &:has(.Johto:checked) {
+        @mixin typeColorChecked #0069d9;
+      }
+      
+      &:has(.Hoenn:hover) {
+        @mixin typeColorHover #0069d9;
+      }
+      &:has(.Hoenn:checked) {
+        @mixin typeColorChecked #0069d9;
+      }
+      
+      &:has(.Sinnoh:hover) {
+        @mixin typeColorHover #0069d9;
+      }
+      &:has(.Sinnoh:checked) {
+        @mixin typeColorChecked #0069d9;
+      }
+      
+      &:has(.Unova:hover) {
+        @mixin typeColorHover #0069d9;
+      }
+      &:has(.Unova:checked) {
+        @mixin typeColorChecked #0069d9;
+      }
+      
+      &:has(.Kalos:hover) {
+        @mixin typeColorHover #0069d9;
+      }
+      &:has(.Kalos:checked) {
+        @mixin typeColorChecked #0069d9;
+      }
+      
+      &:has(.Alola:hover) {
+        @mixin typeColorHover #0069d9;
+      }
+      &:has(.Alola:checked) {
+        @mixin typeColorChecked #0069d9;
+      }
+      
+      &:has(.Galar:hover) {
+        @mixin typeColorHover #0069d9;
+      }
+      &:has(.Galar:checked) {
+        @mixin typeColorChecked #0069d9;
+      }
+      
+      &:has(.Paldea:hover) {
+        @mixin typeColorHover #0069d9;
+      }
+      &:has(.Paldea:checked) {
+        @mixin typeColorChecked #0069d9;
+      }
+}
